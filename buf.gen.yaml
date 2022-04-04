@@ -1,0 +1,28 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/rapita/demo-example-foo-svc/pkg/api
+    except:
+      - buf.build/googleapis/googleapis
+      - buf.build/grpc-ecosystem/grpc-gateway
+      - buf.build/gogo/protobuf
+plugins:
+  - remote: buf.build/library/plugins/go:v1.27.1-1
+    out: pkg/api
+    opt:
+      - paths=source_relative
+  - remote: buf.build/library/plugins/go-grpc:v1.1.0-2
+    out: pkg/api
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false
+  - remote: buf.build/grpc-ecosystem/plugins/grpc-gateway:v2.7.2-1
+    out: pkg/api
+    opt:
+      - paths=source_relative
+      - generate_unbound_methods=true
+  - remote: buf.build/grpc-ecosystem/plugins/openapiv2:v2.7.2-1
+    out: api/openapi
+    opt:
+      - allow_merge=true
