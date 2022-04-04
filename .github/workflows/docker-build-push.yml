@@ -4,6 +4,9 @@ on:
   release:
     types: [ published ]
 
+env:
+  DOCKER_IMAGE: 'rapita/demo-example-foo-svc'
+
 jobs:
   build_and_push:
     name: Build and push image
@@ -19,7 +22,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ${{ github.repository }}
+          images: ${{ env.DOCKER_IMAGE }}
           tags: type=semver,pattern=v{{version}}
           flavor: latest=false
       -
