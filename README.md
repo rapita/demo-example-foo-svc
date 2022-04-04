@@ -23,5 +23,5 @@ make generate
 
 Available as docker image:
 ```shell
-rapita/demo-example-foo-svc:v1
+rapita/demo-example-foo-svc:latest
 ```
