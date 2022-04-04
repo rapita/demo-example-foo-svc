@@ -22,7 +22,8 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ${{ env.DOCKER_IMAGE }}
+          images: |
+            ${{ env.DOCKER_IMAGE }}
           tags: type=semver,pattern=v{{version}}
           flavor: latest=false
       -
