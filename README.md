@@ -20,3 +20,8 @@ Generate code:
 ```shell
 make generate
 ```
+
+Available as docker image:
+```shell
+rapita/demo-example-foo-svc:v1
+```
