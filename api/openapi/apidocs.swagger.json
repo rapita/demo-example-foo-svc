@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "example/foo/v1/foo.proto",
+    "title": "example/v1/foo/foo.proto",
     "version": "version not set"
   },
   "tags": [
@@ -24,7 +24,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1SayResponse"
+              "$ref": "#/definitions/fooSayResponse"
             }
           },
           "default": {
@@ -40,7 +40,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1SayRequest"
+              "$ref": "#/definitions/fooSayRequest"
             }
           }
         ],
@@ -51,6 +51,22 @@
     }
   },
   "definitions": {
+    "fooSayRequest": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "fooSayResponse": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -75,22 +91,6 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "v1SayRequest": {
-      "type": "object",
-      "properties": {
-        "text": {
-          "type": "string"
-        }
-      }
-    },
-    "v1SayResponse": {
-      "type": "object",
-      "properties": {
-        "text": {
-          "type": "string"
         }
       }
     }

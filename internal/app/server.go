@@ -3,7 +3,7 @@ package app
 import (
 	"context"
 	"fmt"
-	pb "github.com/rapita/demo-example-foo-svc/pkg/api/example/foo/v1"
+	pb "github.com/rapita/demo-example-foo-svc/pkg/api/example/v1/foo"
 )
 
 type FooServer struct {

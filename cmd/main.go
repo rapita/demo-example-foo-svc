@@ -7,7 +7,7 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/oklog/run"
 	"github.com/rapita/demo-example-foo-svc/internal/app"
-	pb "github.com/rapita/demo-example-foo-svc/pkg/api/example/foo/v1"
+	pb "github.com/rapita/demo-example-foo-svc/pkg/api/example/v1/foo"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"log"
